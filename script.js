@@ -3,7 +3,7 @@
    ========================================================== */
 const CONFIG = {
   gifts: [
-    { label: 'Pierwszy', url: 'https://www.lego.com/pl-pl/product/vincent-van-gogh-the-starry-night-21333' },
+    { label: 'Pierwszy', url: 'https://www.empik.com/icons-11379-lego,p1736039249,zabawki-p' },
     { label: 'Drugi',    url: 'https://www.westwing.pl/wazon-z-kamionki-dedali-s-25-cm-165355.html' }
   ],
   signature: 'Dzieci',

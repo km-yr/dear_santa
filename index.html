@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>List do Mikołaja</title>
+  <meta name="description" content="Interaktywny list do Mikołaja od dzieci">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 3l4.6 11.7 12.4.6-9.7 7.8 3.3 12-10.6-6.9-10.6 6.9 3.3-12L3 15.3l12.4-.6z' fill='%23c9a227'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <canvas id="snow" aria-hidden="true"></canvas>
+
+  <main>
+    <!-- SCENA 1: choinka -->
+    <section id="scene-tree" class="scene is-active">
+      <svg class="tree" viewBox="0 0 400 440" role="img" aria-label="Choinka z ozdobami i gwiazdą">
+        <defs>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <radialGradient id="flash">
+            <stop offset="0" stop-color="#fffbe6" stop-opacity="1"/>
+            <stop offset=".4" stop-color="#ffe9a3" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#ffe9a3" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <path class="ground draw" pathLength="1" d="M60 418 Q200 410 340 418"/>
+        <path class="tree-line draw" pathLength="1"
+              d="M200 92 L140 180 Q156 186 172 176 L108 272 Q128 280 150 266 L78 372 Q130 382 182 370 L182 412 L200 412"/>
+        <path class="tree-line draw" pathLength="1"
+              d="M200 92 L260 180 Q244 186 228 176 L292 272 Q272 280 250 266 L322 372 Q270 382 218 370 L218 412 L200 412"/>
+
+        <g class="garlands">
+          <path class="garland draw" pathLength="1" d="M162 150 Q200 170 238 150"/>
+          <path class="garland draw" pathLength="1" d="M140 230 Q200 255 262 228"/>
+          <path class="garland draw" pathLength="1" d="M112 320 Q200 350 290 318"/>
+        </g>
+
+        <g id="ornaments"></g>
+
+        <path id="star" class="star draw" pathLength="1"
+              d="M200 42 L206.47 59.1 L224.73 59.97 L210.46 71.4 L215.28 89.03 L200 79 L184.72 89.03 L189.54 71.4 L175.27 59.97 L193.53 59.1 Z"/>
+
+        <g transform="translate(200 42)">
+          <g id="glint" class="glint">
+            <circle class="flash" r="20" fill="url(#flash)"/>
+            <path class="sparkle" d="M0 -16 Q1.8 -1.8 16 0 Q1.8 1.8 0 16 Q-1.8 1.8 -16 0 Q-1.8 -1.8 0 -16 Z"/>
+            <path class="sparkle sparkle--small" d="M0 -8 Q1 -1 8 0 Q1 1 0 8 Q-1 1 -8 0 Q-1 -1 0 -8 Z" transform="rotate(45)"/>
+          </g>
+        </g>
+      </svg>
+
+      <button id="open-letter" class="cta" type="button" disabled>
+        Przeczytaj list do Mikołaja od dzieci
+      </button>
+    </section>
+
+    <!-- SCENA 2: list -->
+    <section id="scene-letter" class="scene" aria-hidden="true">
+      <article id="letter" class="letter">
+        <p id="letter-sr" class="sr-only"></p>
+        <div id="letter-text" aria-hidden="true"></div>
+        <div id="signature" class="signature" aria-hidden="true">
+          <span id="signature-text"></span>
+          <svg class="swash" viewBox="0 0 160 24" aria-hidden="true">
+            <path id="swash" class="draw" pathLength="1" d="M4 14 C40 4 80 22 118 10 C132 6 146 8 156 14"/>
+          </svg>
+        </div>
+        <svg id="pen" class="pen" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M4 36 L9 24 L30 3 L37 10 L16 31 Z" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M9 24 L16 31 M4 36 L11 29 M25 8 L32 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </article>
+
+      <div id="gifts" class="gifts"></div>
+      <p id="hint" class="hint">Kliknij w prezent, aby go otworzyć</p>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

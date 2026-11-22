@@ -14,14 +14,14 @@ radości, śmiechu i wielkiej miłości,
 a czy grzeczni byliśmy? No po możliwości!
 
 Gałązka po gałązce gniazdko wijemy,
-i w cieple, spokoju se w nim żyjemy,
-a gdyż zimą w nim, sny słodkie ścielimy,
+i w cieple, spokoju sobie w nim żyjemy,
+a gdyż zimą w nim sny słodkie ścielimy,
 to o nowy komplet pościeli prosimy.
 
 Twe renifery są silne i zwinne,
 więc mamy dwa pomysły, a każdy jest inny,
-Pierwszy- to coś, co razem złożymy,
-w Drugim- do domu wiosnę wpuścimy.
+Pierwszy - to coś, co razem złożymy,
+w Drugim - do domu wiosnę wpuścimy.
 `
 };
 
